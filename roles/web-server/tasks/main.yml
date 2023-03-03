@@ -11,8 +11,8 @@
 
 - name: set up another page for web-server
   template:
-    src: second.html.j2
-    dest: /var/www/second.html
+    src: host-info.html.j2
+    dest: /var/www/host-info.html
     owner: root
     group: root
     mode: '0644'

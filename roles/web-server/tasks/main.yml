@@ -17,6 +17,12 @@
     group: root
     mode: '0644'
 
+- name: restart nginx
+  service:
+    name: nginx
+    state: reloaded
+    enabled: true
+
 - name: setup ufw
   ansible.builtin.ufw:
     rule: allow

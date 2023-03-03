@@ -1,0 +1,7 @@
+---
+ansible_connection: ssh
+ansible_user: inno
+ansible_password: P@ssw0rd
+ansible_become_user: root
+ansible_become_pass: P@ssw0rd
+...

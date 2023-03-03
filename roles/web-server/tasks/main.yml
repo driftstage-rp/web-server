@@ -1,0 +1,31 @@
+---
+# tasks file for web-server
+
+- name: install web server
+  apt:
+    update_cache: true
+    name:
+      - nginx
+      - w3m
+      - tree
+
+- name: set up another page for web-server
+  template:
+    src: second.html.j2
+    dest: /var/www/second.html
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: setup ufw
+  ansible.builtin.ufw:
+    rule: allow
+    port: '{{ port }}'
+    proto: tcp
+  loop:
+    - '22'
+    - '80'
+  loop_control:
+    loop_var: port
+
+...

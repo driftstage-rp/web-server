@@ -1,0 +1,9 @@
+---
+
+- name: Task for deploy web server by ansible-pull
+  hosts: all
+  gather_facts: true
+  roles:
+    - web-server
+
+...
